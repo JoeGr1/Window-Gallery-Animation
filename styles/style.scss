@@ -1,0 +1,91 @@
+@use "./partials/mixins" as *;
+@use "./partials/variables" as *;
+@use "./partials/animations" as *;
+@use "./partials/typography";
+@use "./partials/resets";
+
+body {
+  height: 100vh;
+  background-color: black;
+  margin: 0rem;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    border: 2px solid #979797;
+    border-radius: 5px;
+    padding-right: 2rem;
+  }
+
+  &__image-window {
+    margin: 1.5rem;
+    width: 12rem;
+    height: 15rem;
+    background-color: aliceblue;
+    overflow: hidden;
+    border: none;
+    border-radius: 3px;
+    animation: window-slide-right 10s infinite;
+
+    &--1 {
+      animation: scale 10s infinite;
+    }
+    &--2 {
+      animation: scale 8s infinite;
+      animation-delay: 1s;
+    }
+    &--3 {
+      animation: scale 6s infinite;
+      animation-delay: 2s;
+    }
+    &--4 {
+      animation: scale 4s infinite;
+      animation-delay: 3s;
+    }
+    &--5 {
+      animation: scale 5s infinite;
+      animation-delay: 4s;
+    }
+  }
+
+  &__image {
+    // background-color: aliceblue;
+    width: 18rem;
+    height: 15rem;
+    animation: slide-right 10s infinite;
+    overflow: visible;
+
+    &--1 {
+      background-image: url("https://loremflickr.com/180/150/london");
+    }
+
+    &--2 {
+      background-image: url("https://loremflickr.com/180/150/paris");
+    }
+
+    &--3 {
+      background-image: url("https://loremflickr.com/180/150/tokyo");
+    }
+
+    &--4 {
+      background-image: url("https://loremflickr.com/180/150/singapore");
+    }
+
+    &--5 {
+      background-image: url("https://loremflickr.com/180/150/capetown");
+    }
+  }
+}
